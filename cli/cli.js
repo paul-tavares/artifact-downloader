@@ -17,10 +17,10 @@ const run = async () => {
     });
 
     const kibana = new Kibana(runOptions);
+    const userSelections = await promptUser(kibana);
 
-    const manifestRequest = await promptUser(kibana);
 
-    console.log(manifestRequest);
+    console.log(userSelections);
 };
 
 
