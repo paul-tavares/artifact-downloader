@@ -23,17 +23,30 @@ const run = async () => {
 
     if (!userSelections.policy) {
         console.warn(`No Endpoint Policies found in Ingest`);
+        console.info(`Go to here to add some: ${runOptions.kibanaUrl}/app/ingestManager#/configs`);
         return;
     }
 
-    const agentAccessKey = await kibana.getAnyFleetAgentAccessApiKey(userSelections.policy.config_id);
+    const agentAccessKey = await kibana.getAnyFleetAgent(userSelections.policy.config_id);
+    const artifactJson = await kibana.downloadArtifact(
+        agentAccessKey.access_api_key,
+        userSelections.manifest.value.relative_url
+    );
+    console.log(`
+    
+Policy: ${userSelections.policy.name}
+Artifact: ${userSelections.manifest.name}
+${getSeparator()}
 
-    console.log(userSelections);
+${JSON.stringify(artifactJson, null, 2)}
+
+${getSeparator()}
+`)
 };
 
-const getHeader = () => {
-    return `-[ ENDPOINT KIBANA ARTIFACT DOWNLOADER ]---------------------------`;
-}
+const getSeparator = () => '-------------------------------------------------------------------';
+
+const getHeader = () => '-[ ENDPOINT KIBANA ARTIFACT DOWNLOADER ]---------------------------';
 
 //==========[ RUN ]=================================
 run();
