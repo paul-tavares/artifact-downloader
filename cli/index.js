@@ -1,4 +1,4 @@
-require = require("esm")(module);
+#!/usr/bin/env node
 
-// Run CLI
+require = require("esm")(module);
 require("./cli");

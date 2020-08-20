@@ -1,14 +1,13 @@
 import minimist from 'minimist'
 import {Kibana, promptUser} from "../lib";
-import {red} from 'kleur'; // reuse from prompts
+import {red, bold} from 'kleur'; // reuse from prompts
 
 const run = async () => {
     console.log(`
 ${getHeader()}
-
-    ${red().bold('WARNING:')}    USE OF THIS UTILITY WILL CREATE A FLEET AGENT.
-                FOR DEVELOPMENT AND TESTING PURPOSES ONLY!
-
+${red(`
+  ${bold('WARNING!')}  USE OF THIS UTILITY WILL CREATE A FLEET AGENT.
+            FOR DEVELOPMENT AND TESTING PURPOSES ONLY!`)}
 `);
 
     const runOptions = minimist(process.argv.slice(2), {
@@ -39,7 +38,7 @@ ${getHeader()}
         userSelections.manifest.value.relative_url
     );
     console.log(`
-    
+${getSeparator()}
 Policy: ${userSelections.policy.name}
 Artifact: ${userSelections.manifest.name}
 ${getSeparator()}
