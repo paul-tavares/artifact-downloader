@@ -32,7 +32,7 @@ ${red(`
         return;
     }
 
-    const agentAccessKey = await kibana.getAnyFleetAgent(userSelections.policy.config_id);
+    const agentAccessKey = await kibana.getAnyFleetAgent(userSelections.policy.policy_id);
     const artifactJson = await kibana.downloadArtifact(
         agentAccessKey.access_api_key,
         userSelections.manifest.value.relative_url
@@ -41,6 +41,8 @@ ${red(`
 ${getSeparator()}
 Policy: ${userSelections.policy.name}
 Artifact: ${userSelections.manifest.name}
+          Encoded SHA256: ${userSelections.manifest.value.encoded_sha256}
+          Decoded SHA256: ${userSelections.manifest.value.decoded_sha256}
 ${getSeparator()}
 
 ${JSON.stringify(artifactJson, null, 2)}
