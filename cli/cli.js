@@ -37,7 +37,7 @@ ${red(`
 
     if (!userSelections.policy) {
         console.warn(`No Endpoint Policies found in Ingest`);
-        console.info(`Go to here to add some: ${runOptions.kibanaUrl}/app/ingestManager#/configs`);
+        console.info(`Go to here to add some: ${runOptions.kibanaUrl}/app/ingestManager#/policies`);
         return;
     }
 
