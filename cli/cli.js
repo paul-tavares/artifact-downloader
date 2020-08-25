@@ -37,12 +37,16 @@ ${red(`
         agentAccessKey.access_api_key,
         userSelections.manifest.value.relative_url
     );
+    const manifest = userSelections.policy.inputs[0].config.artifact_manifest.value;
+    const artifact = userSelections.manifest.value;
+
     console.log(`
 ${getSeparator()}
-Policy: ${userSelections.policy.name}
+Policy:   ${userSelections.policy.name}
+Manifest: ${manifest.manifest_version} | ${manifest.schema_version}
 Artifact: ${userSelections.manifest.name}
-          Encoded SHA256: ${userSelections.manifest.value.encoded_sha256}
-          Decoded SHA256: ${userSelections.manifest.value.decoded_sha256}
+          Encoded SHA256: ${artifact.encoded_sha256}
+          Decoded SHA256: ${artifact.decoded_sha256}
 ${getSeparator()}
 
 ${JSON.stringify(artifactJson, null, 2)}
