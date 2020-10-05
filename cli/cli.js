@@ -41,9 +41,9 @@ ${red(`
         return;
     }
 
-    const agentAccessKey = await kibana.getAnyFleetAgent(userSelections.policy.policy_id);
+    const fakeAgent = await kibana.getAnyFleetAgent(userSelections.policy.policy_id);
     const artifactJson = await kibana.downloadArtifact(
-        agentAccessKey.access_api_key,
+        fakeAgent.access_api_key,
         userSelections.manifest.value.relative_url
     );
     const manifest = userSelections.policy.inputs[0].config.artifact_manifest.value;
@@ -62,6 +62,9 @@ ${JSON.stringify(artifactJson, null, 2)}
 
 ${getSeparator()}
 `)
+
+    // Clean out the fakeAgent created
+    await kibana.forceAgentUnEnroll(fakeAgent.id);
 };
 
 const getSeparator = () => '-------------------------------------------------------------------';
