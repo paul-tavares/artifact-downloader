@@ -28,7 +28,7 @@ const run = async () => {
     console.log(`
 ${getHeader()}
 ${red(`
-  ${bold('WARNING!')}  USE OF THIS UTILITY WILL CREATE A FLEET AGENT.
+  ${bold('WARNING!')}  USE OF THIS UTILITY MAY CREATE A FLEET AGENT.
             FOR DEVELOPMENT AND TESTING PURPOSES ONLY!`)}
 `);
 
