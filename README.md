@@ -1,5 +1,7 @@
 # artifact-downloader
-Download and view Endpoint Security user generated artifacts
+Download and view Endpoint Security user generated artifacts.
+
+> **NOTE: THIS UTILITY WILL ENROLL AN AGENT WITH FLEET TEMPORARILY IN ORDER TO BE ABLE TO DOWNLOAD THE ARTIFACT. THAT AGENT WILL THEN BE UNENROLLED AFTER THE DOWNLOAD IS COMPLETE**
 
 ## Usage
 
@@ -31,4 +33,22 @@ Uninstall it from the global space:
 
 ```bash
 npm uninstall -g artifact-downloader
+```
+
+## FAQ
+
+### The current version is only compatible with `master` in Kibana, how can I use it against an older version of Kibana?
+
+Run the tool with `npx` and request a specific version. Example:
+
+```bash
+npx paul-tavares/artifact-downloader#1.0.0
+```
+
+The above will run `v1.0.0` (a tag in the repo) of the utility. For a list of tagged version numbers, [see the Releases page in the repo](https://github.com/paul-tavares/artifact-downloader/releases)
+
+A commit hash can also be used, example:
+
+```bash
+npx paul-tavares/artifact-downloader#8e8f0e21f
 ```
