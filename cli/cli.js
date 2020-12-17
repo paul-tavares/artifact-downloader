@@ -61,6 +61,7 @@ ${getSeparator()}
 Policy:   ${userSelections.policy.name}
 Manifest: ${manifest.manifest_version} | ${manifest.schema_version}
 Artifact: ${userSelections.manifest.name}
+          Relative URL:   ${artifact.relative_url}
           Encoded SHA256: ${artifact.encoded_sha256}
           Decoded SHA256: ${artifact.decoded_sha256}
 ${getSeparator()}
