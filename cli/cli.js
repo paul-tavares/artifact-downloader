@@ -77,7 +77,7 @@ ${getSeparator()}
 
 const getSeparator = () => '-------------------------------------------------------------------';
 
-const getHeader = () => '-[ ENDPOINT KIBANA ARTIFACT DOWNLOADER ]---------------------------';
+const getHeader = () => `-[ ENDPOINT KIBANA ARTIFACT DOWNLOADER v${packageJson.version}]-------------------`;
 
 const getHelp = () => (`
 ${packageJson.name} [options]
