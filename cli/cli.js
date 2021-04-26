@@ -43,14 +43,12 @@ ${red(`
     const userSelections = await promptUser(kibana);
 
     if (!userSelections.policy) {
-        console.warn(`No Endpoint Policies found in Ingest`);
+        console.warn(`No Endpoint Policies found in Fleet`);
         console.info(`Go to here to add some: ${runOptions.kibanaUrl}/app/fleet#/policies`);
         return;
     }
 
-    const fakeAgent = await kibana.getAnyFleetAgent(userSelections.policy.policy_id);
     const artifactJson = await kibana.downloadArtifact(
-        fakeAgent.access_api_key,
         userSelections.manifest.value.relative_url
     );
     const manifest = userSelections.policy.inputs[0].config.artifact_manifest.value;
@@ -70,9 +68,6 @@ ${JSON.stringify(artifactJson, null, 2)}
 
 ${getSeparator()}
 `)
-
-    // Clean out the fakeAgent created
-    await kibana.forceAgentUnEnroll(fakeAgent.id);
 };
 
 const getSeparator = () => '-------------------------------------------------------------------';
