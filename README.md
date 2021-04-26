@@ -1,4 +1,5 @@
 # artifact-downloader
+
 Download and view Endpoint Security user generated artifacts.
 
 > **NOTE: THIS UTILITY WILL ENROLL AN AGENT WITH FLEET TEMPORARILY IN ORDER TO BE ABLE TO DOWNLOAD THE ARTIFACT. THAT AGENT WILL THEN BE UNENROLLED AFTER THE DOWNLOAD IS COMPLETE**
@@ -11,7 +12,8 @@ Use `npx` to run the utility with no installation required:
 npx paul-tavares/artifact-downloader
 ```
 
-By default the tool runs against `localhost` using the default dev credentials. Run the tool with `--help` to get a list of options available. When setting the `kibana-url` value, ensure that credentials are NOT included in the URL.
+By default the tool runs against `localhost` using the default dev credentials. Run the tool with `--help` to get a list
+of options available. When setting the `kibana-url` value, ensure that credentials are NOT included in the URL.
 
 ## Install
 
@@ -45,7 +47,8 @@ Run the tool with `npx` and request a specific version. Example:
 npx paul-tavares/artifact-downloader#1.0.0
 ```
 
-The above will run `v1.0.0` (a tag in the repo) of the utility. For a list of tagged version numbers, [see the Releases page in the repo](https://github.com/paul-tavares/artifact-downloader/releases)
+The above will run `v1.0.0` (a tag in the repo) of the utility. For a list of tagged version
+numbers, [see the Releases page in the repo](https://github.com/paul-tavares/artifact-downloader/releases)
 
 A commit hash can also be used, example:
 
