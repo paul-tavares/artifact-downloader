@@ -1,4 +1,4 @@
 require = require("esm")(module);
 
 // Run CLI
-require("./cli");
+require("./cli/exec-cli");

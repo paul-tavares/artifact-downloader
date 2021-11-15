@@ -2,6 +2,9 @@ import minimist from 'minimist'
 import {Kibana, promptUser} from "../lib";
 import {red, bold} from 'kleur'; // reuse from prompts
 import packageJson from '../package.json';
+import {getHelp, getVersion} from "./utils";
+
+const COMMAND_NAME = packageJson.name;
 
 const cliOptions = {
   default: {
@@ -23,12 +26,12 @@ const run = async () => {
   const runOptions = minimist(process.argv.slice(2), cliOptions);
 
   if (runOptions.help) {
-    console.log(getHelp());
+    console.log(getHelp(COMMAND_NAME, cliOptions));
     process.exit(0);
   }
 
   if (runOptions.version) {
-    console.log(getVersion());
+    console.log(getVersion(COMMAND_NAME));
     process.exit(0);
   }
 
@@ -73,17 +76,6 @@ ${getSeparator()}
 const getSeparator = () => '-------------------------------------------------------------------';
 
 const getHeader = () => `-[ ENDPOINT KIBANA ARTIFACT DOWNLOADER v${packageJson.version} ]-------------------`;
-
-const getHelp = () => (`
-${packageJson.name} [options]
-
-Options:
-${Object.keys(cliOptions.default).map(opt => `    --${opt}`).join("\n")}
-`);
-
-const getVersion = () => {
-  return `${packageJson.name} ${packageJson.version}`;
-}
 
 //==========[ RUN ]=================================
 run();
