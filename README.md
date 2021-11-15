@@ -12,6 +12,12 @@ Use `npx` to run the utility with no installation required:
 npx paul-tavares/artifact-downloader
 ```
 
+or, one of the utilities:
+
+```bash
+npx paul-tavares/artifact-downloaded decode-artifact --content="eJyrVkrNKynKTC1WsoqOrQUAJxkFKQ=="
+```
+
 By default the tool runs against `localhost` using the default dev credentials. Run the tool with `--help` to get a list
 of options available. When setting the `kibana-url` value, ensure that credentials are NOT included in the URL.
 
@@ -36,6 +42,18 @@ Uninstall it from the global space:
 ```bash
 npm uninstall -g artifact-downloader
 ```
+
+
+## Utilities
+
+### `decode-artifact`
+
+```bash
+npx paul-tavares/artifact-downloaded decode-artifact --content="artifact body content here"
+```
+
+Decodes the artifact's body, which is normally zipped and based64 encoded
+
 
 ## FAQ
 
