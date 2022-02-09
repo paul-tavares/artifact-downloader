@@ -46,10 +46,12 @@ npm uninstall -g artifact-downloader
 
 ## Utilities
 
+Different utility scripts can also be used by adding the `-p` option to `npx` and then using the utility name after the repo name.
+
 ### `decode-artifact`
 
 ```bash
-npx paul-tavares/artifact-downloaded decode-artifact --content="artifact body content here"
+npx -p paul-tavares/artifact-downloader decode-artifact --content="aGVsbG8gd29ybGQ="
 ```
 
 Decodes the artifact's body, which is normally zipped and based64 encoded
