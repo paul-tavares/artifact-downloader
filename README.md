@@ -18,7 +18,7 @@ or, one of the utilities:
 npx paul-tavares/artifact-downloaded decode-artifact --content="eJyrVkrNKynKTC1WsoqOrQUAJxkFKQ=="
 ```
 
-By default the tool runs against `localhost` using the default dev credentials. Run the tool with `--help` to get a list
+By default the tool runs against `localhost` (`127.0.0.1`) using the default dev credentials. Run the tool with `--help` to get a list
 of options available. When setting the `kibana-url` value, ensure that credentials are NOT included in the URL.
 
 ## Install

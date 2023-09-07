@@ -8,7 +8,7 @@ const COMMAND_NAME = packageJson.name;
 
 const cliOptions = {
   default: {
-    'kibana-url': 'http://localhost:5601',
+    'kibana-url': 'http://127.0.0.1:5601',
     'kibana-user': 'elastic',
     'kibana-password': 'changeme'
   },
