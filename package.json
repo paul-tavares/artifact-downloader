@@ -1,6 +1,6 @@
 {
   "name": "artifact-downloader",
-  "version": "1.6.1",
+  "version": "1.6.2",
   "description": "Download and view Endpoint Security user generated artifacts",
   "main": "index.js",
   "scripts": {
