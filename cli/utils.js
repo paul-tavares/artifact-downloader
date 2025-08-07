@@ -1,4 +1,4 @@
-import packageJson from "../package.json";
+import packageJson from "../package.json" with { type: 'json' };
 
 export const getHelp = (commandName, cliOptions) => {
   const optionKeys = Object.keys(cliOptions.default || {});

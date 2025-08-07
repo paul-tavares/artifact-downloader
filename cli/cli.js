@@ -1,8 +1,9 @@
 import minimist from 'minimist'
-import {Kibana, promptUser} from "../lib";
-import {red, bold} from 'kleur'; // reuse from prompts
-import packageJson from '../package.json';
-import {getHelp, getVersion} from "./utils";
+import {Kibana, promptUser} from "../lib/index.js";
+import chalk from 'chalk';
+import packageJson from '../package.json' with { type: 'json' };
+import {getHelp, getVersion} from "./utils.js";
+
 
 const COMMAND_NAME = packageJson.name;
 
@@ -10,12 +11,14 @@ const cliOptions = {
   default: {
     'kibana-url': 'http://127.0.0.1:5601',
     'kibana-user': 'elastic',
-    'kibana-password': 'changeme'
+    'kibana-password': 'changeme',
+    'space-id': 'default',
   },
   alias: {
     'kibana-url': 'kibanaUrl',
     'kibana-user': 'kibanaUser',
     'kibana-password': 'kibanaPassword',
+    'space-id': 'spaceId',
     'h': 'help',
     'v': 'version'
   },
@@ -37,8 +40,8 @@ const run = async () => {
 
   console.log(`
 ${getHeader()}
-${red(`
-  ${bold('WARNING!')}  USE OF THIS UTILITY WILL CREATE A FLEET AGENT.
+${chalk.red(`
+  ${chalk.bold('WARNING!')}  USE OF THIS UTILITY WILL CREATE A FLEET AGENT.
             FOR DEVELOPMENT AND TESTING PURPOSES ONLY!`)}
 `);
 

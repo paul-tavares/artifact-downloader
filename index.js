@@ -1,4 +1,2 @@
-require = require("esm")(module);
-
 // Run CLI
-require("./cli/exec-cli");
+import "./cli/exec-cli.js";

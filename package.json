@@ -17,11 +17,9 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "esm": {
-    "mode": "auto"
-  },
+  "type": "module",
   "dependencies": {
-    "esm": "^3.2.25",
+    "chalk": "^5.5.0",
     "minimist": "^1.2.5",
     "node-fetch": "^2.6.0",
     "prompts": "^2.3.2"
